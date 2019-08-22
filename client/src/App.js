@@ -39,7 +39,9 @@ const App = () => {
       />
       <Route
         path="/update-movie/:id"
-        render={props => <UpdateMovie {...props} movies={movies} />}
+        render={props => (
+          <UpdateMovie {...props} movies={movies} updateMovies={setMovies} />
+        )}
       />
     </>
   );

@@ -26,6 +26,11 @@ const UpdateMovie = props => {
       .put(`http://localhost:5000/api/movies/${movie.id}`, movie)
       .then(res => {
         console.log("res: ", res);
+        const index = props.movies.findIndex(film => film.id === movie.id);
+        console.log("index: ", index);
+        props.movies[index] = movie;
+        props.updateMovies(props.movies);
+        props.history.push("/");
       })
       .catch(err => {
         console.log(err);
