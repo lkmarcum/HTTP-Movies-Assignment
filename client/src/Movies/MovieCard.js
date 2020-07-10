@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const MovieCard = props => {
   const { title, director, metascore, stars } = props.movie;
@@ -18,6 +18,11 @@ const MovieCard = props => {
           {star}
         </div>
       ))}
+      <button
+        onClick={() => props.history.push(`/update-movie/${props.movie.id}`)}
+      >
+        Edit
+      </button>
     </div>
   );
 };
